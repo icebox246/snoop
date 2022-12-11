@@ -115,6 +115,18 @@ int main(void) {
                 case SDL_QUIT: {
                     running = 0;
                 } break;
+
+                case SDL_KEYDOWN: {
+                    switch (ev.key.keysym.sym) {
+                        case SDLK_q:
+                        case SDLK_ESCAPE:
+                            running = 0;
+                            break;
+                        default:
+                            break;
+                    }
+                } break;
+
                 case SDL_MOUSEBUTTONDOWN: {
                     if (ev.button.button == SDL_BUTTON_LEFT) {
                         start_mouse_x = ev.button.x;
